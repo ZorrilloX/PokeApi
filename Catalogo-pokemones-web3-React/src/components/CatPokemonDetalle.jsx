@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Table } from 'react-bootstrap';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Header from './header';
+
 const calcularHP = (baseStat, iv = 31, ev = 0, nivel = 100) => {
     return Math.floor(((2 * baseStat + iv + Math.floor(ev / 4)) * nivel) / 100) + nivel + 10;
 };
@@ -42,6 +44,7 @@ const CatPokemonDetalle = () => {
     if (error) return <p>{error}</p>;
 
     return (
+        
         <Container>
             <Row className="mt-4">
                 <Col md={4}>
